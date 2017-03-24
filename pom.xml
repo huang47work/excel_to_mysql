@@ -7,6 +7,27 @@
     <groupId>com.mason</groupId>
     <artifactId>import_excel_mason</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <name>nexus</name>
+            <url>http://202.91.244.155:8081/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>thirdparty</id>
+            <url>http://202.91.244.155:8081/nexus/content/repositories/thirdparty</url>
+        </repository>
+    </distributionManagement>
+
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/net.sourceforge.jexcelapi/jxl -->
@@ -22,6 +43,12 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.39</version>
         </dependency>
+        <dependency>
+            <groupId>com</groupId>
+            <artifactId>analyzer</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+
 
 
     </dependencies>

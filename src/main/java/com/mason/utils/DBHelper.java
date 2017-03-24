@@ -18,7 +18,7 @@ public class DBHelper {
     Connection con = null;
     ResultSet res = null;
 
-    public void DataBase() {
+    public void DataBase()  {
         try {
             Class.forName(driver);
             con = DriverManager.getConnection(url, "wangrun", "Wangrun321");
@@ -63,10 +63,17 @@ public class DBHelper {
                     pst.setString(i + 1, str[i]);
                 }
             }
+            Thread.currentThread().sleep(100);
             a = pst.executeUpdate();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+        }finally {
+            try {
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         return a;
     }
